@@ -8,5 +8,7 @@
     <string name="error_showing_dog_not_found">No se encontro perro :\'v</string>
     <string name="dog_index_format">#%d</string>
     <string name="dog_life_expectancy_format">%s years</string>
+    <string name="unknow_host_exception">No hay internet</string>
+    <string name="unkonow_error">Error desconocido :(</string>
 
 </resources>

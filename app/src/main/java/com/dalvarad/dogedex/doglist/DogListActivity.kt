@@ -3,14 +3,21 @@ package com.dalvarad.dogedex.doglist
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.lifecycle.MutableLiveData
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.dalvarad.dogedex.Dog
 import com.dalvarad.dogedex.DogDetailActivity
 import com.dalvarad.dogedex.DogDetailActivity.Companion.DOG_KEY
 import com.dalvarad.dogedex.R
+import com.dalvarad.dogedex.api.ApiResponseStatus
 import com.dalvarad.dogedex.databinding.ActivityDogListBinding
+
+
+private const val GRID_SPAN_COUNT = 3
 
 class DogListActivity : AppCompatActivity() {
 
@@ -21,10 +28,11 @@ class DogListActivity : AppCompatActivity() {
         val mBinding = ActivityDogListBinding.inflate(layoutInflater)
         setContentView(mBinding.root)
 
+        val loadingWheel = mBinding.loadingWheel
 
 
         val recycler = mBinding.dogRecicler
-        recycler.layoutManager = LinearLayoutManager(this)
+        recycler.layoutManager = GridLayoutManager(this, GRID_SPAN_COUNT)
 
         val adapter = DogAdapter()
 
@@ -37,11 +45,32 @@ class DogListActivity : AppCompatActivity() {
         }
         recycler.adapter = adapter
 
-        dogListVIewModel.dogList.observe(this){
-            dogList ->
+        dogListVIewModel.dogList.observe(this) { dogList ->
             adapter.submitList(dogList)
         }
+
+        dogListVIewModel.status.observe(this) { status ->
+
+            when (status) {
+                is ApiResponseStatus.Error -> {
+                    //ocultar progresbar
+                    loadingWheel.visibility = View.GONE
+                    Toast.makeText(this, status.message, Toast.LENGTH_LONG).show()
+                }
+                is ApiResponseStatus.Loading -> {
+                    //Mostrar progressbar
+                    loadingWheel.visibility = View.VISIBLE
+                }
+                is ApiResponseStatus.Succes -> {
+                    //ocultar progresbar
+                    loadingWheel.visibility = View.GONE
+                }
+
+            }
+
+
+        }
+
+
     }
-
-
 }
