@@ -1,6 +1,6 @@
 package com.dalvarad.dogedex.api.dto
 
-import com.dalvarad.dogedex.Dog
+import com.dalvarad.dogedex.models.Dog
 
 class DogDTOMaper {
 

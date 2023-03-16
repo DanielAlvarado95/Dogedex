@@ -7,6 +7,7 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import coil.load
 import com.dalvarad.dogedex.databinding.ActivityDogDetailBinding
+import com.dalvarad.dogedex.models.Dog
 
 class DogDetailActivity : AppCompatActivity() {
 

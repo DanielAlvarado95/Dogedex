@@ -6,13 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.activity.viewModels
-import androidx.lifecycle.MutableLiveData
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.dalvarad.dogedex.Dog
 import com.dalvarad.dogedex.DogDetailActivity
 import com.dalvarad.dogedex.DogDetailActivity.Companion.DOG_KEY
-import com.dalvarad.dogedex.R
 import com.dalvarad.dogedex.api.ApiResponseStatus
 import com.dalvarad.dogedex.databinding.ActivityDogListBinding
 
@@ -42,6 +38,10 @@ class DogListActivity : AppCompatActivity() {
             intent.putExtra(DOG_KEY, it)
             startActivity(intent)
 
+        }
+
+        adapter.setLongOnItemClickListener {
+            dogListVIewModel.addDogToUser(it.id)
         }
         recycler.adapter = adapter
 

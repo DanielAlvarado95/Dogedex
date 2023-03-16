@@ -10,5 +10,29 @@
     <string name="dog_life_expectancy_format">%s years</string>
     <string name="unknow_host_exception">No hay internet</string>
     <string name="unkonow_error">Error desconocido :(</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email">Email</string>
+    <string name="password">Contraseña</string>
+    <string name="login">Login</string>
+    <string name="do_not_have_an_account">No tiene cuenta</string>
+    <string name="register">Registrar</string>
+    <string name="confirm_password">Confirmar contraseña</string>
+    <string name="sign_up">Ingresar</string>
+    <string name="email_is_not_valid">Email no valido</string>
+    <string name="password_incorrecto">Contraseña incorrecta</string>
+    <string name="password_no_coinciden">Las contraseñas no coinciden</string>
+    <string name="error_sign_up">error al inscribirse</string>
+    <string name="user_already_exists">El usuario ya existe</string>
+    <string name="error_sign_in">Error al iniciar sesion</string>
+    <string name="there_was_an_error">There was an error</string>
+    <string name="ok">Ok</string>
+    <string name="wrong_user_or_password">Usuario o contraseña incorrecta</string>
+    <string name="boton_para_tomar_fotos">Boton para tomar fotos</string>
+    <string name="boton_para_lista_de_perros">Boton para lista de perros</string>
+    <string name="boton_para_los_ajustes">Boton para los ajustes</string>
+    <string name="logout">Cerrar sesión</string>
+    <string name="error_adding_dog">Ocurrio un error al añadir el perro</string>
+    <string name="unknow_exception">Error desconocido</string>
 
 </resources>
