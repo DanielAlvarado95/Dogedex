@@ -34,5 +34,6 @@
     <string name="logout">Cerrar sesión</string>
     <string name="error_adding_dog">Ocurrio un error al añadir el perro</string>
     <string name="unknow_exception">Error desconocido</string>
+    <string name="acept_permission_camera">Favor de aceptar el permiso para el correcto funcionamiento</string>
 
 </resources>
